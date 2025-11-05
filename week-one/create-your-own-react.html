@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter App</title>
+</head>
+<body>
+  <div class="root"></div>
+
+  <script>
+    const appState = {
+      counter: 0
+    }
+
+    function handleIncrement() {
+      appState.counter++
+      renderApp()
+    }
+
+    const rootElement = document.querySelector(".root")
+
+    function renderApp() {
+      rootElement.innerHTML = ""
+      const counterButton = createCounterButton(appState.counter)
+      rootElement.appendChild(counterButton)
+    }
+
+    function createCounterButton(value) {
+      const button = document.createElement("button")
+      button.textContent = `Value is ${value}`
+      button.setAttribute("onclick", "handleIncrement()")
+      return button
+    }
+
+    renderApp()
+  </script>
+</body>
+</html>

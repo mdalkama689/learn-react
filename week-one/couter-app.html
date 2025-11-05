@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter App</title>
+</head>
+<body style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; font-family: sans-serif; background-color: #f5f5f5;">
+
+  <h1 style="margin-bottom: 20px;">Simple Counter</h1>
+
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <button class="decrease-btn" style="padding: 8px 16px; cursor: pointer;">Decrease</button>
+    <span class="counter-value" style="font-size: 1.5rem; min-width: 40px; text-align: center;">1</span>
+    <button class="increase-btn" style="padding: 8px 16px; cursor: pointer;">Increase</button>
+    <button class="reset-btn" style="padding: 8px 16px; cursor: pointer; background-color: #ff5555; color: white; border: none; border-radius: 4px;">Reset</button>
+  </div>
+
+  <script>
+    const decreaseButton = document.querySelector(".decrease-btn");
+    const increaseButton = document.querySelector(".increase-btn");
+    const resetButton = document.querySelector(".reset-btn");
+    const counterValueElement = document.querySelector(".counter-value");
+
+    decreaseButton.addEventListener("click", () => {
+      counterValueElement.textContent = Number(counterValueElement.textContent) - 1;
+    });
+
+    increaseButton.addEventListener("click", () => {
+      counterValueElement.textContent = Number(counterValueElement.textContent) + 1;
+    });
+
+    resetButton.addEventListener("click", () => {
+      counterValueElement.textContent = 0;
+    });
+  </script>
+</body>
+</html>
